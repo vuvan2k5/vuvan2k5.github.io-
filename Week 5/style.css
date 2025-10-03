@@ -16,8 +16,31 @@ body {
  height: 40px;
  display: inline-block;
  padding: 20px;
+ margin-right: 20px;
   }
  nav#topmenu a {
  text-decoration: none;
  color: #fff;
+ }
+ section {
+ margin-left: 20px;
+ }
+ h1 {
+ font-size: 28px;
+ }
+ header > p {
+ font-style: italic;
+ }
+article > p {
+ font-size: 24px;
+ }
+ footer {
+    position: fixed;
+    text-align: center;
+    background-color: cornflowerblue;
+    color:#fff;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
  }
