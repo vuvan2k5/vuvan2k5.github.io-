@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM events</title>
+</head>
+<body onload="checkCookies()">
+    <h1>JavaScript HTML Events</h1>
+    <h2>The onclick Attribute</h2>
+    <!--This is onload Attribute-->
+    <p id="abc"></p> 
+    <script>
+        function checkCookies() {
+            let text = "";
+            if (navigator.cookieEnabled == true) {
+                text = "Cookies are enabled.<br>Welcome my website!!!";
+            } else {
+                text = "Cookies are not enable.";
+            }
+            document.getElementById("abc").innerHTML = text;
+        }
+    </script>
+
+    <!--This is onclick Attribute-->
+    <h1>Learn about me</h1>
+    <h2 onclick="this.innerHTML='Hello everyone!My name is Van'">Click now!!!</h2>
+    <h2 onclick="changeText(this)">Click one again!</h2>
+    <script>
+        function changeText(id){
+            id.innerHTML = "I'm from Nam Dinh";
+        }
+    </script>
+    <p>You can ask me anything that you want-.-</p>
+    <button onclick="displayDate1()">What time is it?</button>
+    <script>
+        function displayDate1(){
+            document.getElementById("demo1").innerHTML = Date();
+        }
+    </script>
+    <p id="demo1"></p>
+    <p>It's so funny, right?</p>
+    <p>You can try one more again!</p>
+    <button id="myBtn">Try it</button>
+    <p id="demo2"></p>
+    <script>
+        document.getElementById("myBtn").onclick= displayDate2;
+        function displayDate2() {
+            document.getElementById("demo2").innerHTML = Date();
+        }
+    </script>
+    <h2>I want to know some informations about you</h2>
+
+    <!--This is the oninput Attribute-->
+    1. Can i know your name? <input type="text" id="name" oninput="upperCase()"> 
+    <p>You just need to type it in, leave the capitalization to me haha -.- (immediately)</p>
+    <script>
+        function upperCase() {
+            const x = document.getElementById("name");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+
+    <!--This is the onchange Attribute-->
+    2. Now I want to know where were you born? <input type="text" id="location" onchange="upperCase()">
+    <p>In this input, when you finish entering, I will convert the font style for you</p>
+    <script>
+        function upperCase() {
+            const x = document.getElementById("location");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+
+    <!--This is the onmouseover & onmouseout Attribute-->
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color: cadetblue; width:120px; height:20px; padding:40px;">Mouse Over Me</div>
+    <script>
+        function mOver(obj) {
+            obj.innerHTML = "Thank you for your patient!"
+        }
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
+    </script>
+
+    <!--This is the onmousedown, onmouseup & onclick Attribute-->
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color: darksalmon;width:90px;height:20px;padding:40px;">This box is for you</div>
+    <script>
+        function mDown(obj) {
+            onj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "Can we meet and talk together?"
+        }
+        function mUp(obj) {
+            obj.style.backgroundColor = "#1d43d4";
+            obj.innerHTML = "Do you agree?"
+        }
+    </script>
+</body>
+</html>
